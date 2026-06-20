@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7-Day Taipei Itinerary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        accent: '#f59e0b',
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Hide scrollbar for a cleaner app-like feel */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        html, body { height: 100%; overflow: hidden; background-color: #f8fafc; }
+        
+        /* Smooth fade in for cards */
+        .fade-in { animation: fadeIn 0.5s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-slate-800 flex flex-col md:flex-row h-screen w-full antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Desktop Sidebar -->
+    <aside class="hidden md:flex flex-col w-72 bg-dark text-white h-full shadow-2xl z-20 flex-shrink-0">
+        <div class="p-8 pb-4 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-600 rounded-bl-full opacity-20 -mr-8 -mt-8"></div>
+            <span class="bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block shadow-lg shadow-brand-500/30">Itinerary</span>
+            <h1 class="text-3xl font-extrabold tracking-tight text-white mb-1">Taipei</h1>
+            <p class="text-slate-400 text-sm font-medium">7 Days • Mid-October</p>
+        </div>
+        
+        <nav class="flex-1 overflow-y-auto py-4 mt-4 no-scrollbar" id="desktop-nav">
+            <!-- Desktop Nav Links Injected via JS -->
+        </nav>
+        
+        <div class="p-6 bg-slate-900 border-t border-slate-800">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center border border-slate-700">
+                    <svg class="w-5 h-5 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9"></path></svg>
+                </div>
+                <div>
+                    <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold">Pacing</p>
+                    <p class="text-sm font-medium text-slate-200">Moderate</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Mobile Header -->
+    <div class="md:hidden bg-dark text-white shadow-md z-30 flex-shrink-0 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-24 h-24 bg-brand-600 rounded-bl-full opacity-20 -mr-4 -mt-4"></div>
+        <div class="p-5 flex justify-between items-center relative z-10">
+            <div>
+                <h1 class="text-2xl font-extrabold text-white">Taipei Trip</h1>
+                <p class="text-xs text-slate-400">Mid-October Explorer</p>
+            </div>
+            <span class="text-xs font-bold bg-brand-500 text-white px-3 py-1.5 rounded-full shadow-lg">7 Days</span>
+        </div>
+        <nav class="flex overflow-x-auto no-scrollbar border-t border-slate-800" id="mobile-nav">
+            <!-- Mobile Nav Links Injected via JS -->
+        </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <main class="flex-1 overflow-y-auto scroll-smooth relative w-full bg-slate-50" id="main-content">
+        
+        <!-- Hero Banner -->
+        <div class="h-48 sm:h-64 relative flex-shrink-0">
+            <img src="https://placehold.co/1200x600/0f172a/ffffff?text=Taipei+Skyline" alt="Taipei Hero" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-4 sm:p-8 md:p-10 w-full">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-2 tracking-tight">Culture, Scenery <br/><span class="text-brand-500">& Street Food</span></h2>
+                    <p class="text-slate-300 text-sm sm:text-base font-medium max-w-2xl">A curated week balancing iconic city sights, lush mountain day trips, and endless night markets.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="itinerary-container" class="max-w-4xl mx-auto p-3 sm:p-6 lg:p-8">
+            <!-- Days Content Injected via JS -->
+        </div>
+        
+        <!-- Footer / Practical Tips -->
+        <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-12 pt-0">
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-accent rounded-bl-full opacity-10 -mr-8 -mt-8"></div>
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+                    <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    Practical Tips
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="flex gap-4">
+                        <div class="mt-1 flex-shrink-0"><div class="w-8 h-8 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg></div></div>
+                        <div><h4 class="font-bold text-slate-800">EasyCard</h4><p class="text-sm text-slate-600 mt-1">Buy at the airport. Essential for MRT, buses, and convenience store purchases.</p></div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="mt-1 flex-shrink-0"><div class="w-8 h-8 rounded-full bg-green-50 text-green-600 flex items-center justify-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg></div></div>
+                        <div><h4 class="font-bold text-slate-800">Convenience Stores</h4><p class="text-sm text-slate-600 mt-1">7-Eleven & FamilyMart are everywhere. Great for cheap coffee, ATMs, and tickets.</p></div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="mt-1 flex-shrink-0"><div class="w-8 h-8 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path></svg></div></div>
+                        <div><h4 class="font-bold text-slate-800">Comfortable Shoes</h4><p class="text-sm text-slate-600 mt-1">You will walk on concrete and climb stairs. Bring broken-in sneakers.</p></div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="mt-1 flex-shrink-0"><div class="w-8 h-8 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg></div></div>
+                        <div><h4 class="font-bold text-slate-800">Trash Cans</h4><p class="text-sm text-slate-600 mt-1">Public bins are rare. Carry a small plastic bag until you find an MRT station bin.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 text-center text-slate-400 text-sm pb-10">
+                <p>Enjoy your adventure in Taiwan!</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const itineraryData = [
+            {
+                day: 1,
+                title: "Arrival & City Immersion",
+                subtitle: "Settle in and get your first taste of Taipei's food scene.",
+                activities: [
+                    { time: "1:00 PM - 3:00 PM", title: "Arrival & Check-in", description: "Arrive at Taoyuan Airport (TPE). Pick up an EasyCard, grab cash, and take the Airport MRT into the city to your hotel.", img: "Taoyuan Airport" },
+                    { time: "3:30 PM - 5:00 PM", title: "Chiang Kai-shek Memorial Hall", description: "Stroll through the massive Liberty Square. Watch the changing of the guard ceremony.", img: "CKS Memorial Hall" },
+                    { time: "5:30 PM - 7:30 PM", title: "Dinner at Yongkang Street", description: "Head to Dongmen MRT. Grab dinner at the original Din Tai Fung or Yongkang Beef Noodle. Finish with mango shaved ice.", img: "Beef Noodle Soup" },
+                    { time: "8:00 PM - 9:30 PM", title: "Raohe Night Market", description: "Take the Green Line to Songshan. Try the famous black pepper pork buns right at the temple entrance.", img: "Night Market Lanterns" }
+                ]
+            },
+            {
+                day: 2,
+                title: "Modern Taipei & Skyline Views",
+                subtitle: "Explore the glitzy Xinyi district and hike for a sunset view.",
+                activities: [
+                    { time: "9:30 AM - 11:30 AM", title: "Taipei 101", description: "Head up to the Observation Deck early to beat tour groups. Check out the massive tuned mass damper.", img: "Taipei 101" },
+                    { time: "11:45 AM - 1:30 PM", title: "Lunch & Xinyi Shopping", description: "Walk the elevated walkways connecting malls. Great lunch options in the Taipei 101 food court.", img: "Xinyi District" },
+                    { time: "2:00 PM - 4:00 PM", title: "Songshan Cultural Park", description: "An old tobacco factory turned hip park filled with indie boutiques, cafes, and art exhibitions.", img: "Creative Park" },
+                    { time: "4:30 PM - 6:30 PM", title: "Elephant Mountain Hike", description: "Steep 20-min stair climb. Time it for sunset for the absolute best, iconic view of Taipei 101 lighting up.", img: "Elephant Mountain" },
+                    { time: "7:30 PM", title: "Linjiang Night Market", description: "Short walk/ride from the mountain. More local and slightly less crowded than Raohe.", img: "Street Food" }
+                ]
+            },
+            {
+                day: 3,
+                title: "Day Trip to Shifen & Jiufen",
+                subtitle: "Escape the city to see old mining towns and tea houses.",
+                activities: [
+                    { time: "8:30 AM - 10:30 AM", title: "Train to Shifen", description: "Train from Taipei Main Station to Ruifang, then transfer to the local Pingxi Line.", img: "Local Train" },
+                    { time: "10:30 AM - 12:30 PM", title: "Shifen Waterfall & Lanterns", description: "Walk to the waterfall (20 mins). Head back to the tracks to write wishes on a sky lantern and release it.", img: "Sky Lantern" },
+                    { time: "2:30 PM - 5:30 PM", title: "Jiufen Old Street", description: "Wander the narrow, red-lantern-lit alleyways. Stop at Amei Teahouse for traditional tea. Must try: Taro balls.", img: "Jiufen Teahouse" },
+                    { time: "8:00 PM", title: "Ningxia Night Market", description: "Back in Taipei. A compact, food-focused night market favored by locals. Try the fried taro balls.", img: "Oyster Omelet" }
+                ]
+            },
+            {
+                day: 4,
+                title: "History, Art & The Grand Market",
+                subtitle: "Traditional Chinese culture and the biggest night market.",
+                activities: [
+                    { time: "9:30 AM - 12:30 PM", title: "National Palace Museum", description: "Houses a massive collection of ancient Chinese artifacts (moved from the Forbidden City).", img: "Palace Museum" },
+                    { time: "2:00 PM - 4:00 PM", title: "Shilin Residence", description: "Former home of Chiang Kai-shek with beautifully manicured European and Chinese gardens.", img: "Manicured Gardens" },
+                    { time: "6:30 PM Onwards", title: "Shilin Night Market", description: "The biggest night market in Taipei. Underground food court, shopping, and games. Must try: Hot Star Fried Chicken.", img: "Shilin Market" }
+                ]
+            },
+            {
+                day: 5,
+                title: "Hot Springs & Sunsets",
+                subtitle: "Relax taking the MRT north to the coast.",
+                activities: [
+                    { time: "10:00 AM - 1:00 PM", title: "Beitou Hot Springs", description: "MRT to Xinbeitou. See Thermal Valley and book a private hot spring room in a local resort.", img: "Hot Spring Bath" },
+                    { time: "1:00 PM - 2:00 PM", title: "Lunch in Beitou", description: "Grab a hearty bowl of Hot Spring Ramen (Man Ke Wu Ramen is a local favorite).", img: "Ramen Bowl" },
+                    { time: "2:30 PM - 5:30 PM", title: "Tamsui (Danshui)", description: "MRT to the end of the Red Line. Rent a bike or walk the riverside. Explore Tamsui Old Street.", img: "Tamsui River" },
+                    { time: "5:30 PM - 6:30 PM", title: "Fisherman's Wharf", description: "Take a ferry or bus here and walk across Lover's Bridge as the sun sets.", img: "Sunset Bridge" },
+                    { time: "7:30 PM", title: "Ximending Youth District", description: "Head back to the 'Harajuku of Taipei'—neon lights, street performers, and great casual dining.", img: "Neon Streets" }
+                ]
+            },
+            {
+                day: 6,
+                title: "Old Taipei & Hipster Hangouts",
+                subtitle: "Oldest temples meet revitalized neighborhoods.",
+                activities: [
+                    { time: "9:30 AM - 11:30 AM", title: "Longshan Temple & Bopiliao", description: "See Taipei’s oldest temple, then walk through preserved 18th-century brick streets nearby.", img: "Longshan Temple" },
+                    { time: "12:00 PM - 3:00 PM", title: "Dihua Street (Dadaocheng)", description: "Taipei's oldest mercantile street. Old merchant houses are now trendy cafes and artisan shops.", img: "Historic Street" },
+                    { time: "6:00 PM Onwards", title: "Huashan 1914 Creative Park", description: "A revitalized factory space. Great for a sit-down dinner at a nice bistro or craft beer bar.", img: "Bistro Dinner" }
+                ]
+            },
+            {
+                day: 7,
+                title: "Final Bites & Departure",
+                subtitle: "Wrapping up loose ends before flying out.",
+                activities: [
+                    { time: "8:00 AM - 9:30 AM", title: "Traditional Breakfast", description: "Go early to Fuhang Soy Milk (or a local spot) for Dan Bing, Youtiao, and warm soy milk.", img: "Soy Milk Breakfast" },
+                    { time: "10:30 AM - 12:30 PM", title: "Last Minute Shopping", description: "Pick up Taiwanese Pineapple Cakes to take home (Chia Te or SunnyHills are top brands).", img: "Pineapple Cakes" },
+                    { time: "2:30 PM", title: "Head to Airport", description: "Grab your bags and take the Airport MRT back to Taoyuan for your flight home.", img: "Airplane Window" }
+                ]
+            }
+        ];
+
+        // Helper to generate Placeholder Image URLs
+        function getImageUrl(text, index) {
+            // Cycle through a few nice background colors based on index
+            const colors = ['1e293b', '0f172a', '14532d', '075985', '7c2d12', '4c1d95'];
+            const bg = colors[index % colors.length];
+            return `https://placehold.co/800x600/${bg}/ffffff?text=${encodeURIComponent(text)}`;
+        }
+
+        function renderApp() {
+            const desktopNav = document.getElementById('desktop-nav');
+            const mobileNav = document.getElementById('mobile-nav');
+            const container = document.getElementById('itinerary-container');
+
+            itineraryData.forEach((day, index) => {
+                // 1. Desktop Nav Link
+                const dLink = document.createElement('button');
+                dLink.className = `nav-btn w-full text-left px-8 py-3 mb-1 text-sm font-medium transition-all duration-200 border-l-4 ${index === 0 ? 'border-brand-500 bg-slate-800 text-white' : 'border-transparent text-slate-400 hover:text-white hover:bg-slate-800/50'}`;
+                dLink.dataset.day = day.day;
+                dLink.innerHTML = `<span class="font-bold mr-2">Day ${day.day}</span> <span class="truncate block text-xs mt-0.5 opacity-80">${day.title.split('&')[0]}</span>`;
+                dLink.onclick = () => scrollToDay(day.day);
+                desktopNav.appendChild(dLink);
+
+                // 2. Mobile Nav Link
+                const mLink = document.createElement('button');
+                mLink.className = `nav-btn flex-shrink-0 px-5 py-3 text-sm font-medium transition-colors border-b-4 ${index === 0 ? 'border-brand-500 text-white bg-slate-800/50' : 'border-transparent text-slate-400 hover:text-white'}`;
+                mLink.dataset.day = day.day;
+                mLink.innerText = `Day ${day.day}`;
+                mLink.onclick = () => scrollToDay(day.day);
+                mobileNav.appendChild(mLink);
+
+                // 3. Day Content Section
+                const section = document.createElement('div');
+                section.id = `day-${day.day}`;
+                section.className = 'day-section mb-8 sm:mb-10 pt-2 scroll-mt-24 md:scroll-mt-8'; // Offset for fixed headers
+
+                // Day Card Header
+                let html = `
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-800 p-4 sm:p-5 flex justify-between items-center">
+                            <div>
+                                <h2 class="text-lg sm:text-xl font-bold text-white tracking-tight">Day ${day.day}: ${day.title}</h2>
+                                <p class="text-slate-300 text-xs sm:text-sm mt-0.5">${day.subtitle}</p>
+                            </div>
+                        </div>
+                        <div class="divide-y divide-slate-100">
+                `;
+
+                // Activity Rows
+                day.activities.forEach((act) => {
+                    const mapQuery = encodeURIComponent(act.title + ' Taipei');
+                    html += `
+                        <div class="p-3 sm:p-4 flex gap-3 sm:gap-4 hover:bg-slate-50 transition-colors items-start">
+                            <div class="w-20 sm:w-28 flex-shrink-0 pt-0.5">
+                                <span class="text-[10px] sm:text-xs font-semibold text-slate-500 block leading-tight">${act.time}</span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-start gap-2">
+                                    <p class="text-sm text-slate-700 leading-snug">
+                                        <span class="font-medium text-slate-900">${act.title}</span> &ndash; ${act.description}
+                                    </p>
+                                    <a href="https://www.google.com/maps/search/?api=1&query=${mapQuery}" target="_blank" rel="noopener noreferrer" class="text-brand-500 hover:text-brand-700 bg-brand-50 hover:bg-brand-100 p-1.5 rounded-full transition-colors flex-shrink-0 mt-0.5" title="Search on Google Maps">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `
+                        </div>
+                    </div>
+                `;
+                section.innerHTML = html;
+                container.appendChild(section);
+            });
+        }
+
+        function scrollToDay(dayId) {
+            const element = document.getElementById(`day-${dayId}`);
+            const mainContent = document.getElementById('main-content');
+            
+            if (element && mainContent) {
+                // Calculate offset considering mobile header
+                const isMobile = window.innerWidth < 768;
+                const headerOffset = isMobile ? 80 : 0; 
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + mainContent.scrollTop - headerOffset;
+                
+                mainContent.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        function setupScrollSpy() {
+            const mainContent = document.getElementById('main-content');
+            const sections = document.querySelectorAll('.day-section');
+            const navBtns = document.querySelectorAll('.nav-btn');
+
+            mainContent.addEventListener('scroll', () => {
+                let current = '';
+                const isMobile = window.innerWidth < 768;
+                const offset = isMobile ? 120 : 50;
+
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    if (sectionTop <= offset) {
+                        current = section.getAttribute('id').split('-')[1];
+                    }
+                });
+
+                // Default to day 1 if scrolled at the very top
+                if (!current && mainContent.scrollTop < 100) current = '1';
+
+                navBtns.forEach(btn => {
+                    // Reset classes
+                    btn.classList.remove('border-brand-500', 'text-white', 'bg-slate-800', 'bg-slate-800/50');
+                    if (btn.classList.contains('border-l-4')) {
+                        btn.classList.remove('border-transparent');
+                        btn.classList.add('border-transparent', 'text-slate-400');
+                    } else {
+                        btn.classList.remove('border-transparent');
+                        btn.classList.add('border-transparent', 'text-slate-400');
+                    }
+
+                    // Apply active classes
+                    if (btn.dataset.day === current) {
+                        btn.classList.remove('border-transparent', 'text-slate-400');
+                        btn.classList.add('border-brand-500', 'text-white');
+                        
+                        // Desktop active styling
+                        if (btn.classList.contains('border-l-4')) {
+                            btn.classList.add('bg-slate-800');
+                        } 
+                        // Mobile active styling
+                        else {
+                            btn.classList.add('bg-slate-800/50');
+                            // Ensure active mobile tab is visible
+                            const mobileNav = document.getElementById('mobile-nav');
+                            const btnLeft = btn.offsetLeft;
+                            const btnWidth = btn.offsetWidth;
+                            const navScroll = mobileNav.scrollLeft;
+                            const navWidth = mobileNav.offsetWidth;
+                            
+                            if (btnLeft < navScroll || btnLeft + btnWidth > navScroll + navWidth) {
+                                mobileNav.scrollTo({
+                                    left: btnLeft - (navWidth / 2) + (btnWidth / 2),
+                                    behavior: 'smooth'
+                                });
+                            }
+                        }
+                    }
+                });
+            });
+        }
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => {
+            renderApp();
+            
+            // Allow a tiny delay for DOM painting before setting up spy
+            setTimeout(() => {
+                setupScrollSpy();
+                // Trigger scroll event once to set initial state
+                document.getElementById('main-content').dispatchEvent(new Event('scroll'));
+            }, 100);
+        });
+    </script>
+</body>
+</html>
